@@ -1,0 +1,13 @@
+version: '3'
+services:
+  tomcat:
+    image: tomcat:9.0.44-jdk16-openjdk
+    container_name: tomcat_9
+    ports:
+      - '8070:8080'
+    environment:
+      CATALINA_HOME: $CATALINA_HOME
+    volumes:
+      - ./tomcat/tomcat-users.xml:$CATALINA_HOME/conf/tomcat-users.xml:rw
+      - ./tomcat/webapps:$CATALINA_HOME/webapps:rw
+      
