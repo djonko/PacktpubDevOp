@@ -10,4 +10,8 @@ services:
     volumes:
       - ./tomcat/tomcat-users.xml:$CATALINA_HOME/conf/tomcat-users.xml:rw
       - ./tomcat/webapps:$CATALINA_HOME/webapps:rw
-      
+
+networks:
+  default:
+    external:
+      name: packtpubdevop_nt
