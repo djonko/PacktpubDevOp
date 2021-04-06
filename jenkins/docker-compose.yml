@@ -11,18 +11,16 @@ services:
     container_name: jenkins-lts
     volumes:
       - /opt/jenkins_data:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK} -e ${SSH_AUTH_SOCK}
-      - ${HOME}/.ssh/known_hosts:/etc/ssh/ssh_known_hosts
-      #- /usr/bin/git:/usr/bin/git:ro
       - /usr/lib/jvm/zulu-8-amd64:/usr/lib/jvm/zulu-8-amd64:ro
       - ${HOME}/.m2:${HOME}/.m2:ro
       - /home/sabadam/Tools/Maven-3.6.3:${HOME}/Tools/Maven363
       - ./root/.gitconfig:/root/.gitconfig
       - ./root/hosts.txt:/etc/hosts
+      - ./root/.ssh:/root/.ssh
+      - $SSH_AUTH_SOCK:$SSH_AUTH_SOCK
     environment:
       - ADDITIONAL_PATH=/home/sabadam/Tools/Maven363
-
+      - SSH_AUTH_SOCK=$SSH_AUTH_SOCK
 
 networks: 
   default: 

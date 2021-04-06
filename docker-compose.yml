@@ -11,6 +11,28 @@ services:
       - ./tomcat/tomcat-users.xml:$CATALINA_HOME/conf/tomcat-users.xml:rw
       - ./tomcat/webapps:$CATALINA_HOME/webapps:rw
 
+  tomcatQa:
+    image: tomcat:9.0.44-jdk16-openjdk
+    container_name: tomcat_qa_9
+    ports:
+      - '9070:8080'
+    environment:
+      CATALINA_HOME: $CATALINA_HOME
+    volumes:
+      - ./tomcat_qa/tomcat-users.xml:$CATALINA_HOME/conf/tomcat-users.xml:rw
+      - ./tomcat_qa/webapps:$CATALINA_HOME/webapps:rw
+
+  tomcatProd:
+    image: tomcat:9.0.44-jdk16-openjdk
+    container_name: tomcat_prod_9
+    ports:
+      - '9270:8080'
+    environment:
+      CATALINA_HOME: $CATALINA_HOME
+    volumes:
+      - ./tomcat_prod/tomcat-users.xml:$CATALINA_HOME/conf/tomcat-users.xml:rw
+      - ./tomcat_prod/webapps:$CATALINA_HOME/webapps:rw
+
 networks:
   default:
     external:

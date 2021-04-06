@@ -6,5 +6,7 @@ ff02::1	ip6-allnodes
 ff02::2	ip6-allrouters
 172.27.0.4	6f71d0a953aa
 172.27.0.3	local.artifactory
-172.27.0.5	local.tomcat
+172.27.0.5	local.tomcatqa
+172.27.0.6	local.tomcat
+172.27.0.7      local.tomcatprod
 
