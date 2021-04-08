@@ -2,7 +2,7 @@ version: '3'
 services:
   tomcat:
     image: tomcat:9.0.44-jdk16-openjdk
-    container_name: tomcat_9
+    container_name: tomcat9
     ports:
       - '8070:8080'
     environment:
@@ -13,7 +13,7 @@ services:
 
   tomcatQa:
     image: tomcat:9.0.44-jdk16-openjdk
-    container_name: tomcat_qa_9
+    container_name: tomcatqa9
     ports:
       - '9070:8080'
     environment:
@@ -24,7 +24,7 @@ services:
 
   tomcatProd:
     image: tomcat:9.0.44-jdk16-openjdk
-    container_name: tomcat_prod_9
+    container_name: tomcatprod9
     ports:
       - '9270:8080'
     environment:
