@@ -22,7 +22,7 @@ services:
       - ADDITIONAL_PATH=/home/sabadam/Tools/Maven363
       - SSH_AUTH_SOCK=$SSH_AUTH_SOCK
 
-networks: 
-  default: 
-    external: 
+networks:
+  default:
+    external:
       name: packtpubdevop_nt

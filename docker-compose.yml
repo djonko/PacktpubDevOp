@@ -11,6 +11,7 @@ services:
       - ./tomcat/tomcat-users.xml:$CATALINA_HOME/conf/tomcat-users.xml:rw
       - ./tomcat/webapps:$CATALINA_HOME/webapps:rw
       - ./tomcat/catalina.properties:$CATALINA_HOME/conf/catalina.properties:ro
+      - ./tomcat/logs/devops.log:$CATALINA_HOME/logs/devops.log
 
   tomcatQa:
     image: tomcat:9.0.44-jdk16-openjdk
@@ -23,6 +24,7 @@ services:
       - ./tomcat_qa/tomcat-users.xml:$CATALINA_HOME/conf/tomcat-users.xml:rw
       - ./tomcat_qa/webapps:$CATALINA_HOME/webapps:rw
       - ./tomcat_qa/catalina.properties:$CATALINA_HOME/conf/catalina.properties:ro
+      - ./tomcat_qa/logs/devops.log:$CATALINA_HOME/logs/devops.log
 
   tomcatProd:
     image: tomcat:9.0.44-jdk16-openjdk
@@ -35,6 +37,7 @@ services:
       - ./tomcat_prod/tomcat-users.xml:$CATALINA_HOME/conf/tomcat-users.xml:rw
       - ./tomcat_prod/webapps:$CATALINA_HOME/webapps:rw
       - ./tomcat_prod/catalina.properties:$CATALINA_HOME/conf/catalina.properties:ro
+      - ./tomcat_prod/logs/devops.log:$CATALINA_HOME/logs/devops.log
 
 networks:
   default:
