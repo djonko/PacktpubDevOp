@@ -12,7 +12,7 @@ services:
     volumes:
       - /opt/jenkins_data:/var/jenkins_home
       - /usr/lib/jvm/zulu-8-amd64:/usr/lib/jvm/zulu-8-amd64:ro
-      - ${HOME}/.m2:${HOME}/.m2:ro
+      - ${HOME}/.m2:/root/.m2:ro
       - /home/sabadam/Tools/Maven-3.6.3:${HOME}/Tools/Maven363
       - ./root/.gitconfig:/root/.gitconfig
       - ./root/hosts.txt:/etc/hosts
